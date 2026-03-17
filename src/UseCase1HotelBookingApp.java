@@ -18,7 +18,7 @@
  * The goal is to establish a clear and predictable
  * application startup point.
  *
- * @author Developer
+ * @jayaprakash s Developer
  * @version 1.8
  */
 public class UseCase1HotelBookingApp {
@@ -27,10 +27,9 @@ public class UseCase1HotelBookingApp {
      * Application entry point.
      * This method is the first method executed
      * when the program is launched by the JVM.
-     *
-     * @param args Command-line arguments
      */
     public static void main(String[] args) {
+        int num1;
 
         System.out.println("Welcome to the Hotel Booking Management System");
         System.out.println("System initialized successfully.");
