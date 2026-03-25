@@ -10,14 +10,12 @@ public class RoomInventory {
         rooms.put("Suite", 2);
     }
 
-    public boolean hasAvailableRoom(String type) {
-        return rooms.getOrDefault(type, 0) > 0;
+    public Map<String, Integer> getAllRooms() {
+        return rooms;
     }
 
-    public String allocateRoom(String type) {
-        int count = rooms.get(type);
-        rooms.put(type, count - 1);
-        return type + "-" + count;
+    public void setRooms(Map<String, Integer> newRooms) {
+        rooms = newRooms;
     }
 
     public int getAvailableRooms(String type) {
