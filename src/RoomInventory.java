@@ -10,13 +10,17 @@ public class RoomInventory {
         rooms.put("Suite", 2);
     }
 
-    // Increase room count when cancelled
-    public void incrementRoom(String roomType) {
-        rooms.put(roomType, rooms.getOrDefault(roomType, 0) + 1);
+    public boolean hasAvailableRoom(String type) {
+        return rooms.getOrDefault(type, 0) > 0;
     }
 
-    // Get availability
-    public int getAvailableRooms(String roomType) {
-        return rooms.getOrDefault(roomType, 0);
+    public String allocateRoom(String type) {
+        int count = rooms.get(type);
+        rooms.put(type, count - 1);
+        return type + "-" + count;
+    }
+
+    public int getAvailableRooms(String type) {
+        return rooms.getOrDefault(type, 0);
     }
 }
